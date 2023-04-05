@@ -1,0 +1,24 @@
+<form [formGroup]="commentForm" (ngSubmit)="processForm()">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" formControlName="name"></td>
+        </tr>
+        <tr>
+            <td>Rating</td>
+            <td>
+                <select formControlName="rating">
+                    <option *ngFor="let r of ratings" [value]="r">{{r}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Comment: </td>
+            <td>
+                <textarea cols="30" rows="10" formControlName="comment"></textarea>
+            </td>
+        </tr>
+    </table>
+    <button type="button" [routerLink]="['/search',title]"> Back</button>
+    <button type="submit" > Post</button>
+</form>

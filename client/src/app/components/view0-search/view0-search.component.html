@@ -1,0 +1,13 @@
+{{searchForm?.value|json}}
+<form [formGroup]="searchForm" (ngSubmit)="processForm()">
+    <h2>Search Movie Reviews</h2>
+    <table>
+        <tr>
+            <td>Movie name:</td>
+            <td>
+                <input type="text" formControlName="name">
+            </td>
+            <button type="submit">Search</button>
+        </tr>
+    </table>
+</form>
